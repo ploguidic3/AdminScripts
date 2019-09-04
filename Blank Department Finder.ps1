@@ -1,0 +1,3 @@
+﻿#Gets List of AD Users where title and\or department is null and mail is not null, and UAC is 512
+$OurUsers=get-aduser -filter * -properties department, title, givenName, sn, mail, userAccountControl | where {($_.department -eq $null) -or ($_.title -eq $null) -and ($_.mail -ne $null) -and ($_.UserAccountControl -eq 512)} 
+$OurUsers |Export-CSV C:\Users\jloguidice\Documents\Scripts\BlankDepartment.csv
