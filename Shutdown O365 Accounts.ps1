@@ -1,6 +1,6 @@
-#N
+#This script is designed to take users from a termination report and move them to a non-syncing OU
 #
-#Pulls in the CSV (replace jloguidice-a with your -a account)
+#Pulls in the CSV (replace %username% with your Username)
 $csv = Import-csv "C:\Users\%username%\Documents\Termination Reports\Terminated Users.csv"
 #Sets TargetOU variable as Bayada Disabled Users
 $TargetOU = "OU=Example OU,DC=Example DC,DC=Example DC,DC=Example DC"
